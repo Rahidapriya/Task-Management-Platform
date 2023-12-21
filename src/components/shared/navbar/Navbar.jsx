@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import logo from "../../../assets/logo.jpg";
+import logo from "../../../assets/logo.png";
 import { CiLogin } from 'react-icons/ci';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
@@ -28,13 +28,16 @@ const Navbar = ({ children }) => {
   }, []);
 
   const handleScroll = () => {
-    // Check if the user has scrolled down, and set isScrolled accordingly
+    console.log("Scroll position:", window.scrollY);
+  
     if (window.scrollY > 0) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
   };
+  const navbarClass = isScrolled ? "fixed top-0 left-0 right-0 bg-white shadow-md" : "";
+  const containerClass = isScrolled ? "py-3" : "";
   // const handleToggle=(e)=>{
   //       if(e.target.checked){
   //         setTheme("dark");
@@ -49,32 +52,33 @@ const Navbar = ({ children }) => {
       .catch();
         }
   // The class to apply when the user has scrolled down
-  const navbarClass = isScrolled ? "fixed top-0 left-0 right-0" : "";
-  const containerClass = isScrolled ? "py-3" : ""; 
+  // const navbarClass = isScrolled ? "fixed top-0 left-0 right-0" : "";
+  // const containerClass = isScrolled ? "py-3" : ""; 
   // const darkThemeClass = theme === "dark" ? "bg-gray-900" : "bg-white"; 
 
     const navLinks=<>
     <li className=" "><NavLink to="/" className={({ isActive, isPending }) =>
                     isPending ? "pending " : isActive ? "  font-bold  rounded-3xl text-purple-600  underline-offset-8  hover:text-red " : ""
                   }>Home</NavLink></li>
-    <li><NavLink to="/petlisting" className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? " font-bold rounded-3xl text-purple-600   underline-offset-8 hover:text-red  " : ""
-                  }>Pet Listing</NavLink></li>
-                  <li><NavLink to="/donationcampaign" className={({ isActive, isPending }) =>
+    
+                  <li><NavLink to="/about" className={({ isActive, isPending }) =>
                     isPending ? "pending " : isActive ? " font-bold rounded-3xl text-purple-600   underline-offset-8 hover:text-red  " : ""
-                  }>Donation Campaigns</NavLink></li>
+                  }>About Us</NavLink></li>
+                  <li><NavLink to="/contact" className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? " font-bold rounded-3xl text-purple-600   underline-offset-8 hover:text-red  " : ""
+                  }>Contact Us</NavLink></li>
                  
     
     </>
     return (
-      <div className=" z-40 ">
+      <div className=" z-40  ">
         <div className={`drawer z-30  ${containerClass} `}>
-      <div className={`drawer z-30 py-3 ${navbarClass}`}>
-      <div className="drawer z-30  fixed">
+      <div className={`drawer z-30 py-3 `}>
+      <div className={`drawer z-30  fixed ${navbarClass}`}>
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
           <div className={`  w-full `}>
-            <div className="max-w-[1200px] mx-auto navbar">
+            <div className="max-w-[1200px] mx-auto navbar ">
               <div className="flex-none lg:hidden">
                 <label
                   htmlFor="my-drawer-3"
@@ -157,7 +161,7 @@ const Navbar = ({ children }) => {
       {/*  */}
       <hr className="font-bold mb-4"/>
       <div className="ml-4">
-      <Link to='/userdashboard'>Dashboard</Link>
+      <Link to='/dashboard/userdashboard'>Dashboard</Link>
       </div>
       
         

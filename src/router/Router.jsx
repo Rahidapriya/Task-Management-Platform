@@ -7,6 +7,11 @@ import Home from "../components/home/Home";
 import Login from "../pages/login/Login";
 import Register from "../pages/register/Register";
 import ErrorPage from "../pages/errorpage/ErrorPage";
+import Contact from "../pages/contact/Contact";
+import About from "../pages/about/About";
+import Dashboard from "../layouts/dashboard/Dashboard";
+import Cart from "../pages/dashboard/cart/Cart";
+import AddTask from "../pages/addTask/AddTask";
   
   
  
@@ -21,9 +26,17 @@ import ErrorPage from "../pages/errorpage/ErrorPage";
           element: <Home></Home>,
           // loader: () => fetch('https://serversite-pet-adoption.vercel.app/PetCategory')
         },
+        {
+          path: '/contact',
+          element: <Contact></Contact>
+        },
+        {
+          path: '/about',
+          element:<About></About>
+        },
         // {
-        //   path: '/petlisting',
-        //   element: <PetListing></PetListing>
+        //   path:'/dashboard',
+        //   element:<Dashboard></Dashboard>
         // },
         // {
         //   path: '/catagorized_pets/:cat',
@@ -113,6 +126,21 @@ import ErrorPage from "../pages/errorpage/ErrorPage";
   
       ]
     },
+    {
+      path:'dashboard',
+      element:<Dashboard></Dashboard>,
+      children:[
+        {
+          path:'userdashboard',
+          element:<Cart></Cart>
+        },
+        {
+          path:'addtask',
+          element:<AddTask></AddTask>
+
+        }
+      ]
+    }
   
   ]);
   export default router;
