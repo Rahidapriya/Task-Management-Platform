@@ -73,7 +73,7 @@ const Navbar = ({ children }) => {
       <div className="drawer z-30  fixed">
         <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex flex-col">
-          <div className={` shadow-md w-full `}>
+          <div className={`  w-full `}>
             <div className="max-w-[1200px] mx-auto navbar">
               <div className="flex-none lg:hidden">
                 <label
@@ -130,7 +130,7 @@ const Navbar = ({ children }) => {
         <div className="dropdown dropdown-end">
   {
     user&& <div><label tabIndex={0} className=" m-1"> <MdArrowDropDown></MdArrowDropDown></label>
-    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow  rounded-box lg:w-72 lg:h-72 border-2 bg-pink-50" style={{ borderColor: '#D52B5C' }}>
+    <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box lg:w-72 lg:h-72 border-2 bg-pink-50" style={{ borderColor: '#D52B5C' }}>
 
       {/*  */}
     <div className="flex flex-col items-center justify-center mb-6">
