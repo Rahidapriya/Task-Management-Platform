@@ -1,3 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Metamorphous&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Kaushan+Script&family=Lato:wght@400;700;900&family=Metamorphous&family=Oleo+Script+Swash+Caps&family=Poppins:wght@400;500;600;700;800&family=Sevillana&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+body{
+    font-family: 'lato', sans-serif;
+}
+.logo{
+    font-family: 'Sevillana';
+}
