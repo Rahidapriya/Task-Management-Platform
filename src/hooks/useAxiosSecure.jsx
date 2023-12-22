@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const axiosSecure = axios.create({
-    baseURL:'http://localhost:5009'
+    baseURL:'server-site-task-management-platform.vercel.app'
 }) 
 const useAxiosSecure=()=>{
     return axiosSecure;

@@ -7,7 +7,7 @@ const About = () => {
     return (
        <div>
         <Navbar></Navbar>
-         <div className='grid grid-cols-2 gap-10 items-center  py-20 px-20'>
+         <div className='grid grid-cols-1 lg:grid-cols-2 lg:gap-10 items-center  py-20 px-10 lg:px-20'>
            <div className=''>
             <img src={about} className='w-full' alt="" />
             </div> 

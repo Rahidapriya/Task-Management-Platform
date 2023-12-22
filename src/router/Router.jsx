@@ -12,6 +12,8 @@ import About from "../pages/about/About";
 import Dashboard from "../layouts/dashboard/Dashboard";
 import Cart from "../pages/dashboard/cart/Cart";
 import AddTask from "../pages/addTask/AddTask";
+import UserDashboard from "../pages/dashboard/userDashboard/UserDashboard";
+import PrivateRoute from "./PrivateRoute";
   
   
  
@@ -24,7 +26,7 @@ import AddTask from "../pages/addTask/AddTask";
         {
           path: '/',
           element: <Home></Home>,
-          // loader: () => fetch('https://serversite-pet-adoption.vercel.app/PetCategory')
+         
         },
         {
           path: '/contact',
@@ -34,28 +36,7 @@ import AddTask from "../pages/addTask/AddTask";
           path: '/about',
           element:<About></About>
         },
-        // {
-        //   path:'/dashboard',
-        //   element:<Dashboard></Dashboard>
-        // },
-        // {
-        //   path: '/catagorized_pets/:cat',
-        //   element: <AllPetsByCategory></AllPetsByCategory>,
-        //   loader: ({ params }) => fetch(`https://serversite-pet-adoption.vercel.app/petbycategory/${params.cat}`)
-        // },
-        // {
-        //   path: '/adoptionreq',
-        //   element:<PrivateRoute><AdoptionReqDashboard></AdoptionReqDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/donationcampaign',
-        //   element: <DonationCampaign></DonationCampaign>
-        // },
-        // {
-        //   path: '/donationcampaigndetails/:id',
-        //   element: <PrivateRoute><DonationCampaignDetails></DonationCampaignDetails></PrivateRoute>,
-        //   loader: ({ params }) => fetch(`https://serversite-pet-adoption.vercel.app/adddonationcamp/${params.id}`)
-        // },
+        
         {
           path: "/login",
           element: <Login></Login>
@@ -64,79 +45,20 @@ import AddTask from "../pages/addTask/AddTask";
           path: "/register",
           element: <Register></Register>
         },
-        // {
-        //   path: '/userdashboard',
-        //   element: <PrivateRoute><UserDashboard></UserDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/addpet',
-        //   element: <PrivateRoute><AddPetDashboard></AddPetDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/adoptpet/:id',
-        //   element: <PrivateRoute><AdoptPet></AdoptPet></PrivateRoute>,
-        //   loader: ({ params }) => fetch(`https://serversite-pet-adoption.vercel.app/pets/${params.id}`)
-        // },
-        // {
-        //   path: '/myaddedpets',
-        //   element: <PrivateRoute><MyAddedPetsDashboard></MyAddedPetsDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/createdonationcamp',
-        //   element: <PrivateRoute><CreateDonationCampaignDashboard></CreateDonationCampaignDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/mydonation',
-        //   element:<PrivateRoute> <MyDonationDashboard></MyDonationDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/updatedonationcamp/:donationCampaignId',
-        //   element: <PrivateRoute><UpdateDonationCampDashboard></UpdateDonationCampDashboard></PrivateRoute>,
-        //   loader: ({ params }) => fetch(`https://serversite-pet-adoption.vercel.app/adddonationcamp/${params.donationCampaignId}`)
-        // },
-  
-  
-        // {
-        //   path: '/updatepet/:petId',
-        //   element: <PrivateRoute><UpdatePetDashboard></UpdatePetDashboard></PrivateRoute>,
-        //   loader: ({ params }) => fetch(`https://serversite-pet-adoption.vercel.app/pets/${params.petId}`)
-  
-        // },
-        // {
-        //   path: '/mydonationcamp',
-        //   element: <PrivateRoute><MyDonationCampDashboard></MyDonationCampDashboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/allusers',
-        //   element: <PrivateRoute><AllUsersDeshboard></AllUsersDeshboard></PrivateRoute>
-        // },
-        // {
-        //   path: '/allpetsadmin',
-        //   element: <PrivateRoute><AllPetsAdminDashboard></AllPetsAdminDashboard></PrivateRoute>
-        // },
-  
-        // {
-        //   path: '/alldonationcampadmin',
-        //   element: <PrivateRoute><AllDonationCampAdminDashboard></AllDonationCampAdminDashboard></PrivateRoute>
-        // },
-  
-  
-  
-  
   
       ]
     },
     {
       path:'dashboard',
-      element:<Dashboard></Dashboard>,
+      element:<PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children:[
         {
           path:'userdashboard',
-          element:<Cart></Cart>
+          element:<PrivateRoute><UserDashboard></UserDashboard></PrivateRoute>
         },
         {
           path:'addtask',
-          element:<AddTask></AddTask>
+          element:<PrivateRoute><AddTask></AddTask></PrivateRoute>
 
         }
       ]

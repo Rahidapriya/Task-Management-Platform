@@ -13,3 +13,8 @@ body{
 .logo{
     font-family: 'Sevillana';
 }
+.divider-vertical {
+    border-right: 2px solid #ffffff; /* Adjust color and thickness as needed */
+    height: 100%; /* Adjust height as needed */
+    margin-right: 16px; /* Adjust margin as needed */
+}

@@ -27,8 +27,8 @@ const Dashboard = ({ children }) => {
         }
     };
 
-    const navbarClass = isScrolled ? "fixed top-0 left-0 right-0 bg-white shadow-md" : "";
-    const containerClass = isScrolled ? "py-3" : "";
+    // const navbarClass = isScrolled ? "fixed top-0 left-0 right-0 bg-white shadow-md" : "";
+    // const containerClass = isScrolled ? "py-3" : "";
 
     const navLinks = (
         <>
@@ -59,8 +59,8 @@ const Dashboard = ({ children }) => {
 
     return (
         <div className="z-40 grid grid-cols-7">
-            <div className={`drawer z-30  col-span-1 ${containerClass}`} >
-                <div className={`drawer z-30 ${navbarClass}`}>
+        <div className='drawer z-30 col-span-1' >
+          <div className='drawer z-30 '>
                     <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
                     <div className="drawer-content flex flex-col">
                         <div className="max-w-full mx-auto">
@@ -86,17 +86,17 @@ const Dashboard = ({ children }) => {
                                 </label>
                             </div>
                             
-                            <div className="w-64 min-h-screen text-white bg-purple-500 hidden lg:flex">
+                            <div className="w-64 min-h-screen text-black hidden lg:flex">
                                
-                                <ul className="menu p-4 text-lg">
-                                <div className="flex flex-col items-center justify-center mt-10">
-                                    <img src={logo} className="w-24" alt="" />
-                                    <p className="text-4xl logo mb-2">Todoist</p>
-                                </div>
-                                <div className="divider"></div> 
-                                    {navLinks}
-                                </ul>
-                                <div className="dropdown dropdown-end">
+                            <ul className="menu p-4 text-lg">
+              <div className="flex flex-col items-center justify-center mt-10">
+                <img src={logo} className="w-24" alt=""/>
+                <p className="text-4xl logo mb-2">Todoist</p>
+              </div>
+              <div className="divider"></div>
+              {navLinks}
+            </ul>
+            <div className="dropdown dropdown-end">
                                     {user && (
                                         <div>
                                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow rounded-box lg:w-72 lg:h-72 border-2 bg-pink-50" style={{ borderColor: '#D52B5C' }}>

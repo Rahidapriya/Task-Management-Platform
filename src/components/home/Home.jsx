@@ -11,7 +11,7 @@ const Home = () => {
             <Navbar></Navbar>
             <Banner></Banner>
             <Banefit></Banefit>
-            <AddTask></AddTask>
+           
             <Footer></Footer>
         </div>
     );
