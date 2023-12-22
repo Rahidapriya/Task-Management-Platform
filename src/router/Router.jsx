@@ -14,6 +14,7 @@ import Cart from "../pages/dashboard/cart/Cart";
 import AddTask from "../pages/addTask/AddTask";
 import UserDashboard from "../pages/dashboard/userDashboard/UserDashboard";
 import PrivateRoute from "./PrivateRoute";
+import UpdateTask from "../pages/UpdateTask";
   
   
  
@@ -60,7 +61,14 @@ import PrivateRoute from "./PrivateRoute";
           path:'addtask',
           element:<PrivateRoute><AddTask></AddTask></PrivateRoute>
 
-        }
+        },
+        {
+          path: '/updatetask/:Id',
+          element: <PrivateRoute><UpdateTask></UpdateTask></PrivateRoute>,
+          loader: ({ params }) => fetch(`server-site-task-management-platform.vercel.app/addtask/${params.Id}`)
+  
+        },
+
       ]
     }
   
